@@ -14,7 +14,7 @@ export function Home() {
             </aside>
 
             <main>
-                <div>
+                <div className='main-content'>
                     <img src={LogoImg} alt='Letmeask' />
                     <button>
                         <img src={googleIconImg} alt="Logo do Google" />
