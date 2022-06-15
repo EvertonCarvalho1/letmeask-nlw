@@ -9,7 +9,7 @@ import './styles/global.scss';
 function App() {
   return (
     <BrowserRouter>
-      <Route path='/' component={Home} />
+      <Route path='/' exact component={Home} />
       <Route path='/rooms/new' component={NewRoom} />
     </BrowserRouter>
   );
