@@ -7,7 +7,6 @@ import { AuthContextProvider } from './contexts/AuthContext';
 
 import './styles/global.scss';
 
-
 function App() {
 
   return (
