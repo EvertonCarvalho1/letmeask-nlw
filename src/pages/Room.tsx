@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import logoImg from '../assets/images/logo.svg';
@@ -22,6 +22,14 @@ export function Room() {
     const [newQuestion, setNewQuestion] = useState('');
 
     const roomId = params.id;
+
+    useEffect(() => {
+        const roomRef = database.ref(`rooms/${roomId}`);
+
+        roomRef.once('value', room => {
+            console.log(room.val());
+        });
+    }, []);
 
     async function handleSendQuestion(event: FormEvent) {
 
@@ -76,7 +84,8 @@ export function Room() {
                     <div className='form-footer'>
                         {user ? (
                             <div className='user-info'>
-
+                                <img src={user.avatar} alt={user.name} />
+                                <span>{user.name}</span>
                             </div>
                         ) : (
                             <span>Para enviar uma pergunta, <button>faça seu login.</button></span>
