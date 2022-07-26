@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Letmeask" src=".github/logo.svg" width="160px">
+  <img alt="Letmeask" src="https://user-images.githubusercontent.com/82480230/180997315-83ea1a10-6ddf-45bd-9ccd-dd7a5d2108a0.svg" width="160px">
 </p>
 
 <p align="center">
@@ -11,7 +11,7 @@
 </p>
 
 <h1 align="center">
-    <img alt="Letmeask" src=".github/cover.svg" />
+    <img alt="Letmeask" src="https://user-images.githubusercontent.com/82480230/180997298-da90a121-4b18-40dd-92fb-c017fac2a3f4.svg" />
 </h1>
 
 <br>
