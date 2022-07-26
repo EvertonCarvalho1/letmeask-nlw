@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useMemo } from 'react';
 import classNames from 'classnames';
 
 import '../styles/question.scss';
@@ -21,6 +21,13 @@ export function Question({
     isAnswered = false,
     isHighLighted = false
 }: QuestionProps) {
+
+    const getFirstLetters = useMemo(() => {
+        let myStr = author.name;
+        let matches = myStr.match(/\b(\w)/g);
+        return matches?.join('').toLocaleUpperCase();  
+    }, [author.name]);
+
     return (
         <div
             className={classNames(
@@ -32,7 +39,7 @@ export function Question({
             <p>{content}</p>
             <footer>
                 <div className="user-info">
-                    <img src={author.avatar} alt={author.name} />
+                    <img src={author.avatar} alt={getFirstLetters} />
                     <span>{author.name}</span>
                 </div>
                 <div>
