@@ -1,7 +1,7 @@
 import { ReactNode, useMemo } from 'react';
 import classNames from 'classnames';
 
-import '../styles/question.scss';
+import { Container } from './styles';
 
 type QuestionProps = {
     content: string;
@@ -29,7 +29,7 @@ export function Question({
     }, [author.name]);
 
     return (
-        <div
+        <Container
             className={classNames(
                 'question',
                 { answered: isAnswered },
@@ -46,6 +46,6 @@ export function Question({
                     {children}
                 </div>
             </footer>
-        </div>
+        </Container>
     )
 }

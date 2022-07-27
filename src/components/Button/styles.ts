@@ -1,6 +1,7 @@
-.button {
-    //margin-top: 64px;
-    height: 50px;
+import styled from "styled-components";
+
+export const ButtonClick = styled.button`
+     height: 50px;
     border-radius: 8px;
     font-weight: 500;
     background: #835afd;
@@ -34,5 +35,4 @@
         opacity: 0.6;
         cursor: not-allowed;
     }
-
-}
+`;
