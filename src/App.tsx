@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { Home } from './pages/Home';
+import { Home } from './pages/Home/Home';
 import { NewRoom } from './pages/NewRoom';
 import { Room } from './pages/Room';
-import { AdminRoom } from './pages/AdminRoom';
+import { AdminRoom } from './pages/AdminRoom/AdminRoom';
 
 import { AuthContextProvider } from './contexts/AuthContext';
 
