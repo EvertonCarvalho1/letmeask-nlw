@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
@@ -8,18 +7,18 @@ import { Room } from './pages/Room';
 import { AdminRoom } from './pages/AdminRoom';
 
 import { AuthContextProvider } from './contexts/AuthContext';
+import { ThemeContextProvider } from "./contexts/ThemeContext"
 
 import GlobalStyle from './styles/global';
 import light from './styles/themes/light';
 
 function App() {
-  const [theme, setTheme] = useState('');
-
 
   return (
     <BrowserRouter>
+    <ThemeContextProvider>
       <AuthContextProvider>
-        <ThemeProvider theme={light}>
+        
           <GlobalStyle />
           <Switch>
             <Route path='/' exact component={Home} />
@@ -27,8 +26,9 @@ function App() {
             <Route path='/rooms/:id' component={Room} />
             <Route path='/admin/rooms/:id' component={AdminRoom} />
           </Switch>
-        </ThemeProvider>
+      
       </AuthContextProvider>
+      </ThemeContextProvider>
     </BrowserRouter>
   );
 }

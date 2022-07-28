@@ -1,5 +1,7 @@
 import React, { createContext, useState, ReactNode, useEffect } from "react";
+import { DefaultTheme } from "styled-components";
 import { auth, firebase } from '../services/firebase';
+import light from "../styles/themes/light";
 
 
 type User = {
@@ -11,6 +13,7 @@ type User = {
 type AuthContextType = {
     user: User | undefined;
     signInWithGoogle(): Promise<void>;
+
 }
 
 type AuthContextProviderProps = {
@@ -21,7 +24,6 @@ type AuthContextProviderProps = {
 export const AuthContext = createContext({} as AuthContextType);
 
 export function AuthContextProvider(props: AuthContextProviderProps) {
-
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             if (user) {
@@ -73,7 +75,10 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
     const [user, setUser] = useState<User>();
 
     return (
-        <AuthContext.Provider value={{ user, signInWithGoogle }}>
+        <AuthContext.Provider value={{
+            user,
+            signInWithGoogle,
+        }}>
             {props.children}
         </AuthContext.Provider>
     )

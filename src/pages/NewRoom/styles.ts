@@ -8,8 +8,8 @@ export const PageAuth = styled.div`
     aside {
         flex: 7;
 
-        background: ${props => props.theme.colors.newRoom.color1};
-        color: ${props => props.theme.colors.newRoom.color6};
+        background: #835afd;
+        color: #fff;
 
         display: flex;
         flex-direction: column;
@@ -31,7 +31,7 @@ export const PageAuth = styled.div`
             font-size: 24px;
             line-height: 32px;
             margin-top: 16px;
-            color: ${props => props.theme.colors.newRoom.color2};
+            color: #f8f8f8;
         }
     }
 
@@ -68,8 +68,8 @@ export const PageAuth = styled.div`
                 height: 50px;
                 border-radius: 8px;
                 padding: 0 0 0 16px;
-                background: ${props => props.theme.colors.newRoom.color6};
-                border: 1px solid ${props => props.theme.colors.newRoom.color7};
+                background: #FFF;
+                border: 1px solid #a8a8b3;
             }
 
             button {
@@ -84,11 +84,11 @@ export const PageAuth = styled.div`
 
         p {
             font-size: 14px;
-            color: ${props => props.theme.colors.newRoom.color3};
+            color: #737380;
             margin-top: 16px;
 
             a {
-                color: ${props => props.theme.colors.newRoom.color4};
+                color: #e559f9;
             }
         }
 
@@ -97,8 +97,8 @@ export const PageAuth = styled.div`
             height: 50px;
             border-radius: 8px;
             font-weight: 500;
-            background: ${props => props.theme.colors.newRoom.color5};
-            color: ${props => props.theme.colors.newRoom.color6};
+            background: #ea4335;
+            color: #FFF;
 
             display: flex;
             justify-content: center;
@@ -120,7 +120,7 @@ export const PageAuth = styled.div`
 
         .separator {
             font-size: 14px;
-            color: ${props => props.theme.colors.newRoom.color7};
+            color: #a8a8b3;
 
             margin: 32px 0;
             display: flex;
@@ -130,7 +130,7 @@ export const PageAuth = styled.div`
                 content: '';
                 flex: 1;
                 height: 1px;
-                background: ${props => props.theme.colors.newRoom.color7};
+                background: #a8a8b3;
                 margin-right: 16px;
             }
 
@@ -138,7 +138,7 @@ export const PageAuth = styled.div`
                 content: '';
                 flex: 1;
                 height: 1px;
-                background: ${props => props.theme.colors.newRoom.color7};
+                background: #a8a8b3;
                 margin-left: 16px;
             }
 

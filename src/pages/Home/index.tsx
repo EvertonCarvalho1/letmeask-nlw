@@ -1,13 +1,12 @@
-import { FormEvent, useState, useContext } from 'react';
-import Switch from "react-switch";
-import { ThemeContext } from 'styled-components';
-import { shade } from 'polished';
+import { FormEvent, useState, useContext, useCallback } from 'react';
+import Switch from 'react-switch';
 
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 
 import illustrationImg from '../../assets/images/illustration.svg';
 import LogoImg from '../../assets/images/logo.svg';
+import LogoDarkImg from '../../assets/images/logoDark.svg';
 import googleIconImg from '../../assets/images/google-icon.svg';
 
 import { Button } from '../../components/Button';
@@ -15,14 +14,17 @@ import { Button } from '../../components/Button';
 import { database } from '../../services/firebase';
 
 import { PageAuth } from "./styles";
+import { Toggle } from '../../components/Toggle';
+import { useTheme } from '../../hooks/useTheme';
+import dark from '../../styles/themes/dark';
+import light from '../../styles/themes/light';
+import { shade } from 'polished';
 
 export function Home() {
     const history = useHistory();
-
-    const { colors } = useContext(ThemeContext);
     const { user, signInWithGoogle } = useAuth();
-
     const [roomCode, setRoomCode] = useState('');
+    const { theme, setCurrentTheme } = useTheme();
 
     async function handleCreateRoom() {
 
@@ -56,22 +58,30 @@ export function Home() {
         history.push(`/rooms/${roomCode}`);
     }
 
+    function toggleTheme() {
+        setCurrentTheme(theme.title === 'light' ? dark : light);
+        console.log('aaaaaaaaaa', theme)
+    }
+
+
     return (
         <>
             <PageAuth>
+
                 <aside>
                     <Switch
                         className='switch-styles'
-                        onChange={() => { }}
-                        checked={true}
+                        onChange={toggleTheme}
+                        checked={theme.title === 'dark'}
                         checkedIcon={false}
                         uncheckedIcon={false}
                         height={10}
                         width={40}
                         handleDiameter={20}
-                        offColor={shade(0.15, colors.body.color1)}
-                        onColor={colors.body.color2}
+                        offColor={shade(0.15, theme.colors.body.color1)}
+                        onColor={theme.colors.body.color2}
                     />
+
                     <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
                     <strong>Crie salas de Q&amp;A ao-vivo</strong>
                     <p>Tire as dúvidas da sua audiência em tempo-real</p>
@@ -81,7 +91,7 @@ export function Home() {
                     <div className='main-content'>
 
 
-                        <img src={LogoImg} alt='Letmeask' />
+                        <img src={theme.title === 'light' ?  LogoImg : LogoDarkImg} alt='Letmeask' />
 
                         <button onClick={handleCreateRoom} className='create-room'>
                             <img src={googleIconImg} alt="Logo do Google" />
