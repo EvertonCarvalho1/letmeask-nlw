@@ -4,18 +4,20 @@ export const PageAuth = styled.div`
     display: flex;
     align-items: stretch;
     height: 100vh;
-
     aside {
         flex: 7;
-
         background: ${props => props.theme.colors.home.color1};
         color: ${props => props.theme.colors.home.color6};
-
         display: flex;
         flex-direction: column;
         justify-content: center;
-
         padding: 120px 80px;
+
+        .switch-styles{
+            position: relative;
+            top: -200px;
+            left: -65px;
+        }
 
         img {
             max-width: 320px;
