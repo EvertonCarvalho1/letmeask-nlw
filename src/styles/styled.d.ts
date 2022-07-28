@@ -5,11 +5,48 @@ declare module 'styled-components' {
         title: string;
 
         colors: {
-            primary: string;
-            segundary: string;
-
-            background: string;
-            text: string;
-        }
+            body: {
+                color1: string;
+                color2: string;
+            },
+            home: {
+                color1: string;
+                color2: string;
+                color3: string;
+                color4: string;
+                color5: string;
+                color6: string;
+                color7: string;
+            },
+            newRoom: {
+                color1: string;
+                color2: string;
+                color3: string;
+                color4: string;
+                color5: string;
+                color6: string;
+                color7: string;
+            },
+            room: {
+                color1: string;
+                color2: string;
+                color3: string;
+                color4: string;
+                color5: string;
+                color6: string;
+                color7: string;
+                color8: string;
+            },
+            adminRoom: {
+                color1: string;
+                color2: string;
+                color3: string;
+                color4: string;
+                color5: string;
+                color6: string;
+                color7: string;
+                color8: string;
+            },
+        },
     }
 }
