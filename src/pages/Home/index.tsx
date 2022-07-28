@@ -1,5 +1,7 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useContext } from 'react';
 import Switch from "react-switch";
+import { ThemeContext } from 'styled-components';
+import { shade } from 'polished';
 
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
@@ -16,6 +18,8 @@ import { PageAuth } from "./styles";
 
 export function Home() {
     const history = useHistory();
+
+    const { colors } = useContext(ThemeContext);
     const { user, signInWithGoogle } = useAuth();
 
     const [roomCode, setRoomCode] = useState('');
@@ -62,6 +66,11 @@ export function Home() {
                         checked={true}
                         checkedIcon={false}
                         uncheckedIcon={false}
+                        height={10}
+                        width={40}
+                        handleDiameter={20}
+                        offColor={shade(0.15, colors.body.color1)}
+                        onColor={colors.body.color2}
                     />
                     <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
                     <strong>Crie salas de Q&amp;A ao-vivo</strong>

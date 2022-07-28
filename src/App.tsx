@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
@@ -12,6 +13,8 @@ import GlobalStyle from './styles/global';
 import light from './styles/themes/light';
 
 function App() {
+  const [theme, setTheme] = useState('');
+
 
   return (
     <BrowserRouter>
@@ -19,7 +22,6 @@ function App() {
         <ThemeProvider theme={light}>
           <GlobalStyle />
           <Switch>
-            
             <Route path='/' exact component={Home} />
             <Route path='/rooms/new' component={NewRoom} />
             <Route path='/rooms/:id' component={Room} />

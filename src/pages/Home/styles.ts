@@ -15,8 +15,8 @@ export const PageAuth = styled.div`
 
         .switch-styles{
             position: relative;
-            top: -200px;
-            left: -65px;
+            top: -130px;
+            left: -20px;
         }
 
         img {
