@@ -1,16 +1,19 @@
 import { useHistory, useParams } from 'react-router-dom';
 
-import logoImg from '../../assets/images/logo.svg';
 import deleteImg from '../../assets/images/delete.svg';
 import checkImg from '../../assets/images/check.svg';
 import answerImg from '../../assets/images/answer.svg';
 
+import { useTheme } from '../../hooks/useTheme';
+import { useRoom } from '../../hooks/useRoom';
+
 import { Button } from '../../components/Button';
 import { Question } from '../../components/Question';
 import { RoomCode } from '../../components/RoomCode';
-import { useRoom } from '../../hooks/useRoom';
 import { database } from '../../services/firebase';
 
+import logoImg from '../../assets/images/logo.svg';
+import LogoDarkImg from '../../assets/images/logoDark.svg';
 import { PageRoom } from './styles';
 
 type RoomParams = {
@@ -22,6 +25,7 @@ export function AdminRoom() {
     const params = useParams<RoomParams>();
     const roomId = params.id;
 
+    const { theme } = useTheme();
     const { questions, title } = useRoom(roomId);
 
 
@@ -54,7 +58,7 @@ export function AdminRoom() {
         <PageRoom>
             <header>
                 <div className="content">
-                    <img src={logoImg} alt="letmeask" />
+                    <img src={theme.title === 'light' ? logoImg : LogoDarkImg} alt='Letmeask' />
                     <div>
                         <RoomCode
                             code={roomId}
