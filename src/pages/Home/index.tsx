@@ -1,8 +1,10 @@
-import { FormEvent, useState, useContext, useCallback } from 'react';
+import { FormEvent, useState} from 'react';
+import { shade } from 'polished';
 import Switch from 'react-switch';
 
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
+import { useTheme } from '../../hooks/useTheme';
 
 import illustrationImg from '../../assets/images/illustration.svg';
 import LogoImg from '../../assets/images/logo.svg';
@@ -14,11 +16,8 @@ import { Button } from '../../components/Button';
 import { database } from '../../services/firebase';
 
 import { PageAuth } from "./styles";
-import { Toggle } from '../../components/Toggle';
-import { useTheme } from '../../hooks/useTheme';
 import dark from '../../styles/themes/dark';
 import light from '../../styles/themes/light';
-import { shade } from 'polished';
 
 export function Home() {
     const history = useHistory();
@@ -60,9 +59,7 @@ export function Home() {
 
     function toggleTheme() {
         setCurrentTheme(theme.title === 'light' ? dark : light);
-        console.log('aaaaaaaaaa', theme)
     }
-
 
     return (
         <>
