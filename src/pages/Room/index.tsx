@@ -1,7 +1,9 @@
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import logoImg from '../../assets/images/logo.svg';
+import LogoDarkImg from '../../assets/images/logoDark.svg';
+import { useTheme } from '../../hooks/useTheme';
 
 import { Button } from '../../components/Button';
 import { Question } from '../../components/Question';
@@ -18,6 +20,7 @@ type RoomParams = {
 
 export function Room() {
     const { user } = useAuth();
+    const { theme } = useTheme();
     const params = useParams<RoomParams>();
     const [newQuestion, setNewQuestion] = useState('');
     const roomId = params.id;
@@ -61,11 +64,20 @@ export function Room() {
         }
     }
 
+    const getFirstLetters = useMemo(() => {
+        let myStr = user?.name;
+        if (myStr) {
+            let matches = myStr.match(/\b(\w)/g);
+            return matches?.join('').toLocaleUpperCase();
+        }
+
+    }, [user?.name]);
+
     return (
         <PageRoom>
             <header>
                 <div className="content">
-                    <img src={logoImg} alt="letmeask" />
+                    <img src={theme.title === 'light' ? logoImg : LogoDarkImg} alt='Letmeask' />
                     <RoomCode
                         code={roomId}
                     />
@@ -87,7 +99,7 @@ export function Room() {
                     <div className='form-footer'>
                         {user ? (
                             <div className='user-info'>
-                                <img src={user.avatar} alt={user.name} />
+                                <img src={user.avatar} alt={getFirstLetters} />
                                 <span>{user.name}</span>
                             </div>
                         ) : (
