@@ -23,6 +23,7 @@ export default {
             color5: '#ea4335',
             color6: '#FFF',
             color7: '#a8a8b3',
+            color8: '#29292e'
         },
         room: {
             color1: '#e2e2e2',

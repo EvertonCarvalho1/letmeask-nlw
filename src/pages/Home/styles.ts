@@ -45,6 +45,7 @@ export const PageAuth = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        color: ${props => props.theme.colors.newRoom.color8};
     }
 
     .main-content {

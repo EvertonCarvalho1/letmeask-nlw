@@ -26,6 +26,7 @@ declare module 'styled-components' {
                 color5: string;
                 color6: string;
                 color7: string;
+                color8: string;
             },
             room: {
                 color1: string;

@@ -4,18 +4,20 @@ export const PageAuth = styled.div`
     display: flex;
     align-items: stretch;
     height: 100vh;
-
     aside {
         flex: 7;
-
-        background: #835afd;
-        color: #fff;
-
+        background: ${props => props.theme.colors.newRoom.color1};
+        color: ${props => props.theme.colors.newRoom.color6};
         display: flex;
         flex-direction: column;
         justify-content: center;
-
         padding: 120px 80px;
+
+        .switch-styles{
+            position: relative;
+            top: -130px;
+            left: -20px;
+        }
 
         img {
             max-width: 320px;
@@ -31,7 +33,7 @@ export const PageAuth = styled.div`
             font-size: 24px;
             line-height: 32px;
             margin-top: 16px;
-            color: #f8f8f8;
+            color: ${props => props.theme.colors.newRoom.color2};
         }
     }
 
@@ -43,6 +45,7 @@ export const PageAuth = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        color: ${props => props.theme.colors.newRoom.color8};
     }
 
     .main-content {
@@ -68,8 +71,8 @@ export const PageAuth = styled.div`
                 height: 50px;
                 border-radius: 8px;
                 padding: 0 0 0 16px;
-                background: #FFF;
-                border: 1px solid #a8a8b3;
+                background: ${props => props.theme.colors.newRoom.color6};
+                border: 1px solid ${props => props.theme.colors.newRoom.color7};
             }
 
             button {
@@ -84,11 +87,11 @@ export const PageAuth = styled.div`
 
         p {
             font-size: 14px;
-            color: #737380;
+            color: ${props => props.theme.colors.newRoom.color3};
             margin-top: 16px;
 
             a {
-                color: #e559f9;
+                color: ${props => props.theme.colors.newRoom.color4};
             }
         }
 
@@ -97,8 +100,8 @@ export const PageAuth = styled.div`
             height: 50px;
             border-radius: 8px;
             font-weight: 500;
-            background: #ea4335;
-            color: #FFF;
+            background: ${props => props.theme.colors.newRoom.color5};
+            color: ${props => props.theme.colors.newRoom.color6};
 
             display: flex;
             justify-content: center;
@@ -120,7 +123,7 @@ export const PageAuth = styled.div`
 
         .separator {
             font-size: 14px;
-            color: #a8a8b3;
+            color: ${props => props.theme.colors.newRoom.color7};
 
             margin: 32px 0;
             display: flex;
@@ -130,7 +133,7 @@ export const PageAuth = styled.div`
                 content: '';
                 flex: 1;
                 height: 1px;
-                background: #a8a8b3;
+                background: ${props => props.theme.colors.newRoom.color7};
                 margin-right: 16px;
             }
 
@@ -138,7 +141,7 @@ export const PageAuth = styled.div`
                 content: '';
                 flex: 1;
                 height: 1px;
-                background: #a8a8b3;
+                background: ${props => props.theme.colors.newRoom.color7};
                 margin-left: 16px;
             }
 

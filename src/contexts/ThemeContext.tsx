@@ -1,8 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 import { DefaultTheme, ThemeProvider } from 'styled-components';
 import light from '../styles/themes/light';
-import dark from '../styles/themes/light';
-
 
 type ThemeContextProviderProps = {
     children: ReactNode;

@@ -16,13 +16,14 @@ export default {
             color7: '#a8a8b3',
         },
         newRoom: {
-            color1: '#835afd',
+            color1: '#07070A',
             color2: '#f8f8f8',
             color3: '#737380',
             color4: '#e559f9',
             color5: '#ea4335',
             color6: '#FFF',
             color7: '#a8a8b3',
+            color8: '#FFF'
         },
         room: {
             color1: '#e2e2e2',
